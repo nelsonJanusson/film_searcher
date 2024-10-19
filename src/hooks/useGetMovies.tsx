@@ -24,36 +24,3 @@ export const useGetMovies = (name: string,  page: number): UseQueryResult<ApiRes
     queryFn: fetchData,
   });
 }
-/*
-export default function useGetMovies(name: string,  page: number) {
-  const fetchData = async ()  => {
-    const { data } = await axios.get<ApiResponse|Message>(
-      REACT_APP_BASE_URL,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        params: { apikey: REACT_APP_API_KEY,
-                  s:name,
-                  page:page,
-                  type:"movie"
-         } 
-      }
-    );
-    return data;
-  };
-
-  const {
-    data,
-    isLoading,
-    isError,
-    error,
-  } = useQuery({
-    queryKey: [`api-getMovies-`+name+`-`+page],
-    queryFn: async () => {
-      return fetchData();
-    },
-  });
-  return { data, isLoading, isError, error };
-}
-*/

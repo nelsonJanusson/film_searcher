@@ -1,6 +1,6 @@
 import CircularProgress from '@mui/material/CircularProgress';
 
-export default function ApiThrobber() {
+export default function LoadingState() {
     return (
       <>
           <CircularProgress/>

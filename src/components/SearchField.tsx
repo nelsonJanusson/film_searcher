@@ -1,12 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-type Inputs = {
-    example: string
-  }
-export default function SearchField({
-    setName,
-  }: {
-    setName: React.Dispatch<React.SetStateAction<string>>;
-  }){
+
+type Inputs = {example: string}
+
+export default function SearchField({setName}:{setName: React.Dispatch<React.SetStateAction<string>>}){
     const {
         register,
         handleSubmit,

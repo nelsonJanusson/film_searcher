@@ -1,10 +1,6 @@
 import { Movie } from "../types/types";
 
-export default function MovieRow({
-    movie,
-  }: {
-    movie: Movie;
-  }) {
+export default function MovieRow({movie}: {movie: Movie;}) {
   
   return (
     <div className="flex flex-col content-normal m-3">
