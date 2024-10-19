@@ -10,8 +10,10 @@ import {
 
 export default function MovieTable({
   movies,
+  setSelected,
 }: {
   movies: Movie[];
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
 }) {
 
   const columnHelper = createColumnHelper<Movie>()
@@ -34,6 +36,7 @@ const columns = [
     columns,
     getCoreRowModel: getCoreRowModel(),
   })
+ 
 
   return (
     <div className="p-2">
@@ -56,7 +59,8 @@ const columns = [
         </thead>
         <tbody>
           {table.getRowModel().rows.map(row => (
-            <tr key={row.id}>
+            <tr key={row.id}
+                onClick={ ()=>setSelected(row.original.imdbID)}>
               {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
