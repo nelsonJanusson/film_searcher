@@ -10,10 +10,10 @@ export default function PageNavigator({
     
   
   return (
-    <div>
-      {page > 1 && <button onClick={ () => setPage(prev => prev - 1)}>decrease</button>} 
-      <p>{page}</p>
-      {page < maxPage && <button onClick={ () => setPage(prev => prev + 1)}>increase</button>}
+    <div className="flex flex-row justify-center">
+      {page > 1 && <button className="border-solid border-black border-2 rounded-sm w-20" onClick={ () => setPage(prev => prev - 1)}>previous</button>} 
+      <p className=" mx-3 px-3">{page} / {maxPage}</p>
+      {page < maxPage && <button className="border-solid border-black border-2 rounded-sm w-20" onClick={ () => setPage(prev => prev + 1)}>next</button>}
     </div>
   )
 }

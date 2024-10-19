@@ -9,13 +9,9 @@ export default function MovieRow({
   }) {
   
   return (
-    <div onClick={ ()=>setSelected(movie.imdbID)}>
-       <img 
-      src={movie.Poster}
-      />
-      <p>{movie.Title}</p>
-      <p>{movie.Year}</p>
-      <p>{movie.imdbID}</p>
+    <div onClick={ ()=>setSelected(movie.imdbID)} className="flex flex-col content-normal m-3">
+       <img src={movie.Poster}/>
+       <p>{movie.Title} ({movie.Year})</p>
     </div>
   )
 }

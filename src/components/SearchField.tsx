@@ -15,11 +15,14 @@ export default function SearchField({
     const onSubmit: SubmitHandler<Inputs> = (data) => setName(data.example)
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form  onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex flex-col justify-center content-normal">
           <label>what are you searching for</label>
-          <input {...register("example", { required: true })} />
+          <input className="border-solid border-black border-2 rounded-sm w-1/3  m-2"
+          {...register("example", { required: true})} />
           {errors.example && <span>This field is required</span>}
-          <input className="bg-blue" type="submit" />
+          <input className="border-solid border-black border-2 rounded-sm w-1/4  m-2" type="submit" />
+          </div>
         </form>
       )
 }
