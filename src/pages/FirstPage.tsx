@@ -1,4 +1,5 @@
 
+import { REACT_APP_API_KEY } from '../env';
 import useGet from '../hooks/useGet'
 
 export default function FirstPage() {
