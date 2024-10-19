@@ -19,7 +19,7 @@ export default function SearchField({
           <label>what are you searching for</label>
           <input {...register("example", { required: true })} />
           {errors.example && <span>This field is required</span>}
-          <input type="submit" />
+          <input className="bg-blue" type="submit" />
         </form>
       )
 }
