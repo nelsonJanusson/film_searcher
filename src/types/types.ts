@@ -9,7 +9,7 @@ export type Movie = {
 export type ApiResponse = {
     Search: Movie[];
     totalResults: number;
-    Response: boolean;
+    Response: "True";
 }
 export type FullMovie = {
     Title: string;
@@ -41,4 +41,8 @@ export type FullMovie = {
 export type Rating = {
     Source: string;
     Value: string;
+}
+export type Message = {
+    Response: "False";
+    Error: string;
 }

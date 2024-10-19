@@ -1,4 +1,4 @@
-import { REACT_APP_API_KEY_SPECIFIC } from '../env';
+import {REACT_APP_API_KEY, REACT_APP_BASE_URL } from '../env';
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -7,11 +7,15 @@ export default function useGetMovies(
 ) {
   const fetchData = async () => {
     const { data } = await axios.get(
-      REACT_APP_API_KEY_SPECIFIC+id,
+      REACT_APP_BASE_URL,
       {
         headers: {
           "Content-Type": "application/json",
         },
+        params: { apikey: REACT_APP_API_KEY,
+          i:id,
+          type:"movie"
+ } 
       }
     );
     return data;

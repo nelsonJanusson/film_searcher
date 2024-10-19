@@ -1,11 +1,11 @@
-import { Movie } from "../types/Types";
+import { Movie } from "../types/types";
 
 export default function MovieRow({
     movie,
     setSelected,
   }: {
     movie: Movie;
-    setSelected: React.Dispatch<React.SetStateAction<string>>;
+    setSelected: React.Dispatch<React.SetStateAction<string|null>>;
   }) {
   
   return (
@@ -16,7 +16,6 @@ export default function MovieRow({
       <p>{movie.Title}</p>
       <p>{movie.Year}</p>
       <p>{movie.imdbID}</p>
-
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { Movie } from "../types/Types";
+import { Movie } from "../types/types";
 import MovieRow from "./MovieRow";
 
 export default function MovieList({
@@ -6,7 +6,7 @@ export default function MovieList({
     setSelected,
   }: {
     movies: Movie[];
-    setSelected: React.Dispatch<React.SetStateAction<string>>;
+    setSelected: React.Dispatch<React.SetStateAction<string|null>>;
   }) {
   
   return (
