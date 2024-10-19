@@ -10,9 +10,13 @@ Run the following commands in the project directory:
 
 #### `npm run dev` to run the application.
 
-After running the app it can be accessed on port 5173 in your browser [http://localhost:5173](http://localhost:5173).
+After running the app it can be accessed on port 5173  or at the following adress in your browser: [http://localhost:5173](http://localhost:5173).
 
 The page will reload when you save changes.
+
+---
+
+# Testing
 
 #### `npm test` runs test although none are implemented yet
 
