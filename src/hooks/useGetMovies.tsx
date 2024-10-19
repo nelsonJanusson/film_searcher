@@ -13,6 +13,7 @@ export default function useGetMovies(name: string,  page: number) {
         params: { apikey: REACT_APP_API_KEY,
                   s:name,
                   page:page,
+                  type:"movie"
          } 
       }
     );
