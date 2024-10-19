@@ -2,23 +2,25 @@
 import { useState } from 'react';
 import ApiThrobber from '../components/ApiThrobber';
 import MovieCard from '../components/MovieCard';
-import MovieTable from '../components/MovieTable';
-import useGet from '../hooks/useGet'
+import useGetMovies from '../hooks/useGetMovies'
+import MovieList from '../components/MovieList';
 
 export default function FirstPage() {
 
-  const{data, isLoading, error}  = useGet("batman");
+  const{data, isLoading, error}  = useGetMovies("batman");
 
-  const[selected,setSelected] = useState<string>("nope")
+  const[selected,setSelected] = useState<string>("tt0372784")
+
 
   if(isLoading) return <ApiThrobber/> 
 
-  if(error) return <p>hi: error {error.message}</p>
+  if(error) return <p>hi: error</p>
 
   return (
     <>
-        <MovieTable movies={data.Search} setSelected={setSelected}/>
-        <MovieCard title={selected}/>
+        <MovieList movies={data.Search} setSelected={setSelected} ></MovieList>
+        <MovieCard selected={selected}/>
+        <p>{selected}</p>
     </>
   )
 }
