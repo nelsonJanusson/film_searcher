@@ -1,15 +1,30 @@
+
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import ApiErrorCard from '../components/Fallback';
+import SearchField from '../components/SearchField';
 
+describe("test", () => {
+    
 describe('App tests', () => {
     it('should contains the heading 1', () => {
 
-    render(<ApiErrorCard message='oh no'/>);
+    render(<SearchField/>);
 
-    const element = screen.getByText(/oh no/i);
+    const element = screen.getByText(/what are you searching for/i);
 
     expect(element).toBeInTheDocument();
      
     });
+});
+describe('App tests', () => {
+    it('should contains the heading 2', () => {
+
+    render(<SearchField/>);
+
+    const element = screen.getByText(/what are you searching for/i);
+
+    expect(element).toBeInTheDocument();
+     
+    });
+});
 });

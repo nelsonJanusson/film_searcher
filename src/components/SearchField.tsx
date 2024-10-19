@@ -8,6 +8,7 @@ export default function SearchField({setName}:{setName: React.Dispatch<React.Set
         handleSubmit,
         formState: { errors },
       } = useForm<Inputs>()
+      
     const onSubmit: SubmitHandler<Inputs> = (data) => setName(data.example)
 
     return (
