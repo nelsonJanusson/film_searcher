@@ -1,16 +1,16 @@
 
 import './App.css'
-
 import { 
   QueryClient,
   QueryClientProvider } from '@tanstack/react-query'
-import FirstPage from './pages/FirstPage'
+import MovieSearch from './pages/MovieSearch'
 const queryClient = new QueryClient()
 
 export default function App() {
+
   return (
     <QueryClientProvider client={queryClient}>
-        <FirstPage/>
+        <MovieSearch/>
     </QueryClientProvider>
   )
 }

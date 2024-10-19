@@ -1,16 +1,12 @@
-import MovieList from "./MovieList";
-import PageNavigator from "./PageNavigator";
-import SearchField from "./SearchField";
+import MovieList from "../components/MovieList";
+import PageNavigator from "../components/PageNavigator";
+import SearchField from "../components/SearchField";
 import { useState } from "react";
 import useGetMovies from "../hooks/useGetMovies";
-import ApiThrobber from "./ApiThrobber";
-import ApiErrorCard from "./ApiErrorCard";
+import ApiThrobber from "../components/ApiThrobber";
+import ApiErrorCard from "../components/ApiErrorCard";
 
-export default function MovieSearchResults({
-    setSelected,
-  }: {
-    setSelected: React.Dispatch<React.SetStateAction<string|null>>;
-  }) {
+export default function MovieSearch() {
     const [page,setPage] = useState<number>(1); 
     const [name,setName] = useState<string>("batman"); 
     const{data, isLoading, error}  = useGetMovies(name, page);   
@@ -26,7 +22,7 @@ export default function MovieSearchResults({
           {data.Response =="False" && <ApiErrorCard message={data.Error}/>}
           {data.Response =="True" && 
           <>
-           <MovieList movies={data.Search} setSelected={setSelected}/>
+           <MovieList movies={data.Search}/>
            <PageNavigator maxPage={Math.ceil(data.totalResults/10)} page={page} setPage={setPage}/>
           </>}
         </>
