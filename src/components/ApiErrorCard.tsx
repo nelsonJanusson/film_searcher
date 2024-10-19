@@ -1,16 +1,14 @@
-import { Message } from "../types/types";
 
 export default function ApiErrorCard({
     message,
   }: {
-    message: Message;
+    message: string;
   }) {
-    
     return (
       <>
-        <p>There was an error fetching the data, please try again</p>
-        <p>{message.Error}</p>
+        <p>There was an error fetching the data</p>
+        <p>{message}</p>
       </>
     )
-  }
+}
     

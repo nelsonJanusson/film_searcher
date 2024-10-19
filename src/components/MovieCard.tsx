@@ -1,4 +1,5 @@
 import useGetMovie from "../hooks/useGetMovie";
+import ApiErrorCard from "./ApiErrorCard";
 import ApiThrobber from "./ApiThrobber";
 
 export default function MovieCard({
@@ -11,12 +12,10 @@ export default function MovieCard({
 
   if(isLoading) return <ApiThrobber/> 
 
-  if(error) return <p>hi: error</p>
+  if(error) return <ApiErrorCard message={error.message}/>
 
   return (
-    <>
       <p>{data.Actors}</p>
-    </>
   )
 }
   

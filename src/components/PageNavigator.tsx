@@ -11,9 +11,9 @@ export default function PageNavigator({
   
   return (
     <div>
-      {page > 1 && <button onClick={ ()=>setPage(prev => prev - 1)}>decrease</button>} 
+      {page > 1 && <button onClick={ () => setPage(prev => prev - 1)}>decrease</button>} 
       <p>{page}</p>
-      {page < maxPage && <button onClick={ ()=>setPage(prev => prev + 1)}>increase</button>}
+      {page < maxPage && <button onClick={ () => setPage(prev => prev + 1)}>increase</button>}
     </div>
   )
 }

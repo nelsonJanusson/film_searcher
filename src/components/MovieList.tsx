@@ -11,7 +11,7 @@ export default function MovieList({
   
   return (
     <>
-     {movies?.map(movie =>
+     {movies.map(movie =>
         <MovieRow key={movie.imdbID} movie={movie} setSelected={setSelected}/>
       )}
     </>

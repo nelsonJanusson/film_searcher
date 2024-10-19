@@ -17,31 +17,20 @@ export default function MovieSearchResults({
    
     if(isLoading) return <ApiThrobber/> 
    
-    if(error) return <p>hi: error</p>
+    if(error) return <ApiErrorCard message={error.message}/>
     
-    if(data &&  data.Response=="False"){
+    if(data){
       return (
         <>  
           <SearchField setName={setName}/>
-          <ApiErrorCard message={data}/>
+          {data.Response =="False" && <ApiErrorCard message={data.Error}/>}
+          {data.Response =="True" && 
+          <>
+           <MovieList movies={data.Search} setSelected={setSelected}/>
+           <PageNavigator maxPage={Math.ceil(data.totalResults/10)} page={page} setPage={setPage}/>
+          </>}
         </>
       )
-    }
-
-    if(data && data.Response=="True"){
-      let maxpage =  data.totalResults/10 ;
-      if(maxpage % 1 != 0 ){
-        maxpage = Math.trunc( maxpage )+1;
-      }
-    
-    return (
-      <>
-        <SearchField setName={setName}/>
-        <MovieList movies={data.Search} setSelected={setSelected}/>
-        <PageNavigator maxPage={maxpage} page={page} setPage={setPage}/>
-      </>
-    )
-    }
-    
-}
   
+    }
+}

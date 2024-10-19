@@ -4,7 +4,7 @@ import axios from "axios";
 import { ApiResponse, Message } from '../types/types';
 
 export default function useGetMovies(name: string,  page: number) {
-  const fetchData = async () => {
+  const fetchData = async ()  => {
     const { data } = await axios.get<ApiResponse|Message>(
       REACT_APP_BASE_URL,
       {
