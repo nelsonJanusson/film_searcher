@@ -1,25 +1,31 @@
-import { useState } from "react";
+import {useState} from "react";
 import MovieList from "./MovieList";
 import PageNavigator from "./PageNavigator";
-import { Movie } from "../types/Types";
+import {ApiResponse} from "../types/Types";
 
 export default function MovieSearchResults({
-    name,
+    apiResponse,
     setSelected,
+    page,
+    setPage,
   }: {
-    name: Movie[];
+    apiResponse: ApiResponse;
     setSelected: React.Dispatch<React.SetStateAction<string>>;
+    page: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
   }) {
   
 
-  const [page,setPage] = useState<number>(0); 
+  let maxpage =  apiResponse.totalResults/10 ;
+  if(maxpage % 1 != 0 ){
+    maxpage = Math.trunc( maxpage )+1;
+  }
+  
 
-  
-  
   return (
     <>
-        <MovieList movies={name} setSelected={setSelected}/>
-        <PageNavigator page={page} setPage={setPage }/>
+        <MovieList movies={apiResponse.Search} setSelected={setSelected}/>
+        <PageNavigator maxPage={maxpage} page={page} setPage={setPage }/>
     </>
   )
 }

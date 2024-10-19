@@ -6,10 +6,12 @@ import useGetMovies from '../hooks/useGetMovies'
 import MovieSearchResults from '../components/MovieSearchResults';
 
 export default function FirstPage() {
+  const [page,setPage] = useState<number>(1); 
 
- const{data, isLoading, error}  = useGetMovies("batman");
 
-  const[selected,setSelected] = useState<string>("tt0372784")
+ const{data, isLoading, error}  = useGetMovies("batman", page);
+
+ const[selected,setSelected] = useState<string>("tt0372784")
 
 
  if(isLoading) return <ApiThrobber/> 
@@ -18,7 +20,7 @@ export default function FirstPage() {
 
   return (
     <>
-        <MovieSearchResults name={data.Search} setSelected={setSelected}/>
+        <MovieSearchResults apiResponse={data} setSelected={setSelected} page={page} setPage={setPage}/>
         <MovieCard selected={selected}/>
     </>
   )
