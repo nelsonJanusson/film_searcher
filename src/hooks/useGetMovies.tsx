@@ -1,11 +1,11 @@
 import { REACT_APP_API_KEY, REACT_APP_BASE_URL } from '../env';
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import axios from "axios";
-import { ApiResponse, Message } from '../types/types';
+import { ApiResponse, Exception } from '../types/types';
 
-export const useGetMovies = (queryString: string,  page: number): UseQueryResult<ApiResponse|Message> => {
-  const fetchData = (): Promise<ApiResponse|Message> =>
-    axios.get<ApiResponse|Message>(
+export const useGetMovies = (queryString: string,  page: number): UseQueryResult<ApiResponse|Exception> => {
+  const fetchData = (): Promise<ApiResponse|Exception> =>
+    axios.get<ApiResponse|Exception>(
       REACT_APP_BASE_URL,
       {
         headers: {
@@ -17,9 +17,9 @@ export const useGetMovies = (queryString: string,  page: number): UseQueryResult
                   type:"movie"
          } 
       }
-    ).then<ApiResponse|Message>(response => response.data);
+    ).then<ApiResponse|Exception>(response => response.data);
 
-  return useQuery<ApiResponse|Message>({
+  return useQuery<ApiResponse|Exception>({
     queryKey: [`api-getMovies-`+queryString+`-`+page],
     queryFn: fetchData,
   });

@@ -16,8 +16,8 @@ export default function MovieList({queryString}: {queryString: string;}) {
 
 return (
   <>
-  {data.Response == "False" && <Fallback message={data.Error}/>}
-  {data.Response == "True" && 
+  {data.Response === "False" && <Fallback message={data.Error}/>}
+  {data.Response === "True" && 
   <div className="grid grid-cols-5">
     {data.Search.map(movie => <MovieRow key={movie.imdbID} movie={movie}/>)}
     <PageNavigator maxPage={Math.ceil(data.totalResults / 10)} page={page} setPage={setPage} />
