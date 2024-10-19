@@ -7,9 +7,10 @@ import MovieSearchResults from '../components/MovieSearchResults';
 
 export default function FirstPage() {
   const [page,setPage] = useState<number>(1); 
+  const [name,setName] = useState<string>("batman"); 
 
 
- const{data, isLoading, error}  = useGetMovies("batman", page);
+ const{data, isLoading, error}  = useGetMovies(name, page);
 
  const[selected,setSelected] = useState<string>("tt0372784")
 
@@ -19,8 +20,13 @@ export default function FirstPage() {
   if(error) return <p>hi: error</p>
 
   return (
-    <>
-        <MovieSearchResults apiResponse={data} setSelected={setSelected} page={page} setPage={setPage}/>
+    <>  
+        <MovieSearchResults 
+        apiResponse={data} 
+        setSelected={setSelected} 
+        page={page} 
+        setPage={setPage}
+        setName={setName}/>
         <MovieCard selected={selected}/>
     </>
   )
