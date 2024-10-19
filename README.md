@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Prerequisites
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Node installation.
 
-Currently, two official plugins are available:
+# How to run the application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Run the following commands in the project directory:
 
-## Expanding the ESLint configuration
+#### `npm install` to install required dependencies and packages.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### `npm run dev` to run the application.
 
-- Configure the top-level `parserOptions` property like this:
+After running the app it can be accessed on port 5173 in your browser [http://localhost:5173](http://localhost:5173).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The page will reload when you save changes.
+
+#### `npm test` runs test although none are implemented yet
+
+---
+
+# Deployment
+
+The app is hosted as a Azure service and can be accesed at this adress:.
+
+Any changes to the main branch are automatically pushed to the azure service. 
+
+---
+
+# Troubleshooting
+
+1. Verify your node installation and upgrade to the most recent version.
+
+2. Shut down any other services that are running on port 5173.
+
+3. verify that you have the env.ts file in the src folder.
+
+4. contact technical support (nelson.janusson@gmail.com).
+
+---
+
+
+# Frontend Structure
+
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+📦src
+ ┣ 📂assets
+ ┣ 📂components
+ ┣ 📂hooks
+ ┣ 📂pages
+ ┣ 📂types
 ```
