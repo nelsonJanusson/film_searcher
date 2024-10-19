@@ -22,7 +22,7 @@ export default function useGetMovies(
     isLoading,
     error,
   } = useQuery({
-    queryKey: [`api-movie`],
+    queryKey: [`api-getMovie-`+id],
     queryFn: async () => {
       return fetchData();
     },

@@ -15,7 +15,6 @@ export default function MovieCard({
 
   return (
     <>
-     <p>hi: sucess</p>
       <p>{data.Actors}</p>
     </>
   )

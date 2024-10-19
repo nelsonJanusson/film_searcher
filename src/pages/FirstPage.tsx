@@ -3,24 +3,23 @@ import { useState } from 'react';
 import ApiThrobber from '../components/ApiThrobber';
 import MovieCard from '../components/MovieCard';
 import useGetMovies from '../hooks/useGetMovies'
-import MovieList from '../components/MovieList';
+import MovieSearchResults from '../components/MovieSearchResults';
 
 export default function FirstPage() {
 
-  const{data, isLoading, error}  = useGetMovies("batman");
+ const{data, isLoading, error}  = useGetMovies("batman");
 
   const[selected,setSelected] = useState<string>("tt0372784")
 
 
-  if(isLoading) return <ApiThrobber/> 
+ if(isLoading) return <ApiThrobber/> 
 
   if(error) return <p>hi: error</p>
 
   return (
     <>
-        <MovieList movies={data.Search} setSelected={setSelected} ></MovieList>
+        <MovieSearchResults name={data.Search} setSelected={setSelected}/>
         <MovieCard selected={selected}/>
-        <p>{selected}</p>
     </>
   )
 }
