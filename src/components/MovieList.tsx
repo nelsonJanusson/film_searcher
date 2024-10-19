@@ -5,11 +5,11 @@ import LoadingState from "./LoadingState";
 import MovieRow from "./MovieRow";
 import PageNavigator from "./PageNavigator";
 
-export default function MovieList({name}: {name: string;}) {
+export default function MovieList({queryString}: {queryString: string;}) {
 
-  useEffect(() => {setPage(1)}, [name])
+  useEffect(() => {setPage(1)}, [queryString])
   const [page,setPage] = useState<number>(1); 
-  const{data, isLoading, isError}  = useGetMovies(name, page); 
+  const{data, isLoading, isError}  = useGetMovies(queryString, page); 
 
   if(isLoading) return <LoadingState/> 
   if(isError) return <Fallback message={"there was an error fetching your data"}/>

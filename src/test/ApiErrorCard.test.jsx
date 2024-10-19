@@ -1,14 +1,14 @@
 
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import SearchField from '../components/SearchField';
+import InputField from '../components/InputField';
 
 describe("test", () => {
     
 describe('App tests', () => {
     it('should contains the heading 1', () => {
 
-    render(<SearchField/>);
+    render(<InputField/>);
 
     const element = screen.getByText(/what are you searching for/i);
 
@@ -19,7 +19,7 @@ describe('App tests', () => {
 describe('App tests', () => {
     it('should contains the heading 2', () => {
 
-    render(<SearchField/>);
+    render(<InputField/>);
 
     const element = screen.getByText(/what are you searching for/i);
 

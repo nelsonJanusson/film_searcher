@@ -18,7 +18,7 @@ The page will reload when you save changes.
 
 # Testing
 
-#### `npm test` runs test although none are implemented yet
+#### `npm test` runs test.
 
 ---
 
@@ -43,7 +43,7 @@ Any changes to the main branch are automatically pushed to the azure service.
 ---
 
 
-# Frontend Structure
+# Structure
 
 ```
 📦src
@@ -51,5 +51,6 @@ Any changes to the main branch are automatically pushed to the azure service.
  ┣ 📂components
  ┣ 📂hooks
  ┣ 📂pages
+ ┣ 📂test
  ┣ 📂types
 ```

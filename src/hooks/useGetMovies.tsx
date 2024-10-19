@@ -3,7 +3,7 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import axios from "axios";
 import { ApiResponse, Message } from '../types/types';
 
-export const useGetMovies = (name: string,  page: number): UseQueryResult<ApiResponse|Message> => {
+export const useGetMovies = (queryString: string,  page: number): UseQueryResult<ApiResponse|Message> => {
   const fetchData = (): Promise<ApiResponse|Message> =>
     axios.get<ApiResponse|Message>(
       REACT_APP_BASE_URL,
@@ -12,7 +12,7 @@ export const useGetMovies = (name: string,  page: number): UseQueryResult<ApiRes
           "Content-Type": "application/json",
         },
         params: { apikey: REACT_APP_API_KEY,
-                  s:name,
+                  s:queryString,
                   page:page,
                   type:"movie"
          } 
@@ -20,7 +20,7 @@ export const useGetMovies = (name: string,  page: number): UseQueryResult<ApiRes
     ).then<ApiResponse|Message>(response => response.data);
 
   return useQuery<ApiResponse|Message>({
-    queryKey: [`api-getMovies-`+name+`-`+page],
+    queryKey: [`api-getMovies-`+queryString+`-`+page],
     queryFn: fetchData,
   });
 }
