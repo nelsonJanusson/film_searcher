@@ -47,7 +47,6 @@ Any changes to the main branch are automatically pushed to the azure service.
 
 ```
 📦src
- ┣ 📂assets
  ┣ 📂components
  ┣ 📂hooks
  ┣ 📂pages
