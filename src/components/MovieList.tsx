@@ -19,7 +19,7 @@ return (
   {data.Response === "False" && <Fallback queryString={queryString} message={data.Error}/>}
   {data.Response === "True" && 
     <>
-      <div className="grid grid-cols-5">
+      <div className="mb-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-5 lg:mb-0">
         {data.Search.map(movie => <MovieCard key={movie.imdbID} movie={movie} />)}
       </div>
       <PageNavigator maxPage={Math.ceil(data.totalResults / 10)} page={page} setPage={setPage} />
