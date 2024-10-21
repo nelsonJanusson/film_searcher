@@ -9,7 +9,7 @@ export const useGetMovies = (
   queryString: string, 
   page: number
 ): UseQueryResult<ApiResponse|Exception> => {
-  
+
   const fetchData = (): Promise<ApiResponse|Exception> =>
     axios.get<ApiResponse|Exception>(
       baseUrl,
@@ -21,10 +21,9 @@ export const useGetMovies = (
           type:"movie"
         } 
       }
-    ).then(response => response.data)
-     .catch(error => {throw new Error(error.response.data.Error);})
+    ).then(response => response.data);
 
-    return useQuery<ApiResponse|Exception>({
+  return useQuery<ApiResponse|Exception>({
     queryKey: [queryString + `-` + page],
     queryFn: fetchData,
   });
