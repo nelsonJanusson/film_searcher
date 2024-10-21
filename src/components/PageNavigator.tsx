@@ -10,15 +10,18 @@ export default function PageNavigator({
     
   
   return (
-    <div className="flex flex-row justify-center w-screen font-bold m-2">
-      {page > 1 && <button 
-      className=" bg-blue-200 rounded-md	h-10 w-20" 
-      onClick={ () => setPage(prev => prev - 1)}>previous
-      </button>} 
+    <div className="flex flex-row  items-center justify-center w-screen font-bold m-2">
+      <button 
+      className={`bg-blue-200 rounded-md	h-10 w-20 ${page > 1 ? '' : 'invisible'}`} 
+      onClick={ () => setPage(prev => prev - 1)}>
+        previous
+      </button> 
       <p className=" mx-3 px-3">{page} / {maxPage}</p>
-      {page < maxPage && <button 
-      className=" bg-blue-200 rounded-md	h-10 w-20" 
-      onClick={ () => setPage(prev => prev + 1)}>next</button>}
+      <button 
+      className={`bg-blue-200 rounded-md	h-10 w-20 ${page < maxPage ? '' : 'invisible'}`} 
+      onClick={ () => setPage(prev => prev + 1)}>
+        next
+      </button>
     </div>
   )
 }
