@@ -13,10 +13,10 @@ export default function MovieList({
 
   useEffect(() => {setPage(1)}, [queryString]);
   const [page, setPage] = useState<number>(1); 
-  const{data, isLoading, isError} = useGetMovies(queryString, page); 
+  const{data, isLoading, isError, error} = useGetMovies(queryString, page); 
 
   if(isLoading) return <LoadingState/> 
-  if(isError) return <Fallback queryString={queryString} message={"there was an error fetching your data"}/>
+  if(isError) return <Fallback queryString={queryString} message={error.message}/>
   if(data.Response === "False") return <Fallback queryString={queryString} message={data.Error}/>
 
   return (
