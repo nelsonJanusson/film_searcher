@@ -22,9 +22,18 @@ export default function MovieList({
   return (
     <> 
       <div className="m-6 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-5">
-        {data.Search.map(movie => <MovieCard key={movie.imdbID} movie={movie} />)}
+        {data.Search.map(movie => 
+          <MovieCard 
+            key={movie.imdbID} 
+            movie={movie}
+          />
+        )}
       </div>
-      <PageNavigator maxPage={Math.ceil(data.totalResults / 10)} page={page} setPage={setPage} />
+      <PageNavigator
+        maxPage={Math.ceil(data.totalResults / 10)} 
+        page={page} 
+        setPage={setPage} 
+      />
     </>
   );
 }

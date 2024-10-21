@@ -24,7 +24,7 @@ export const useGetMovies = (
     ).then(response => response.data);
 
   return useQuery<ApiResponse|Exception>({
-    queryKey: [queryString + `-` + page],
+    queryKey: [queryString + page],
     queryFn: fetchData,
   });
 }

@@ -5,10 +5,10 @@ export function Fallback({
   message: string; 
   queryString:string;
 }) {
-
+  
   return (
-    <div className="flex justify-center">
-      <div className="m-4 font-bold text-center lg:w-1/2 bg-blue-200 rounded-md mt-10">
+    <div className="flex p-12 justify-center">
+      <div className="font-bold text-center lg:w-1/2 bg-blue-200 rounded-md">
         {message == "Movie not found!" ? (
           <p className="m-4 lg:text-2xl ">
             No results found for your search query: '{queryString}'. 

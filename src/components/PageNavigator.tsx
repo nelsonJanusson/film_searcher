@@ -1,12 +1,12 @@
 export  function PageNavigator({
-    maxPage,
-    page,
-    setPage
-  }: {
-    maxPage: number;
-    page: number;
-    setPage: React.Dispatch<React.SetStateAction<number>>;
-  }) {
+  maxPage,
+  page,
+  setPage
+}: {
+  maxPage: number;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+}) {
     
   return (
     <div className="fixed bottom-0 w-full lg:relative flex items-center justify-center font-bold text-xl">

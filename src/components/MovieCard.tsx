@@ -9,9 +9,10 @@ export function MovieCard({
   
   return (
     <div className="flex flex-col m-6">
-       <img src={movie.Poster == "N/A" ? GreyCover : movie.Poster}/>
-       <p className="text-center font-bold text-xl ">
-        {movie.Title} ({movie.Year})</p>
+      <img src={movie.Poster == "N/A" ? GreyCover : movie.Poster}/>
+      <p className="text-center font-bold text-xl ">
+        {movie.Title} ({movie.Year})
+      </p>
     </div>
   );
 }
