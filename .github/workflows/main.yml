@@ -28,7 +28,7 @@ jobs:
           ###### Repository/Build Configurations ######
           app_location: "/" # App source code path relative to repository root
           api_location: "" # Api source code path relative to repository root - optional
-          output_location: "" # Built app content directory, relative to app_location - optional
+          output_location: "/dist" # Built app content directory, relative to app_location - optional
           skip_app_build: true
           ###### End of Repository/Build Configurations ######
 
