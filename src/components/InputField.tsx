@@ -14,7 +14,7 @@ export default function InputField({setQueryString}:{setQueryString: React.Dispa
     return (
       
         <form  onSubmit={handleSubmit(onSubmit)} 
-        className = "sticky top-0 bg-blue-200 flex flex-row content-normal p-4">
+        className = "sticky top-0 bg-blue flex flex-row content-normal p-4">
           <input className="p-2 rounded-l-md my-2 ml-6 h-10 focus:outline-none w-1/4 "
           {...register("queryString", { required: true})} />
           <button className="rounded-r-md my-2 h-10 focus:outline-none bg-white pr-5" type="submit" >
