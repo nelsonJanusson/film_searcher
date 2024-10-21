@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import MovieList   from '../components/MovieList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-describe('App tests', () => {
+describe('MovieList tests', () => {
 
     test('should load first page of ironman results correctly', async () => {
 

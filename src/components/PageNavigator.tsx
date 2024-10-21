@@ -1,7 +1,7 @@
 export  function PageNavigator({
     maxPage,
     page,
-    setPage,
+    setPage
   }: {
     maxPage: number;
     page: number;
