@@ -12,11 +12,11 @@ export default function MovieList({queryString}: {queryString: string;}) {
   const{data, isLoading, isError}  = useGetMovies(queryString, page); 
 
   if(isLoading) return <LoadingState/> 
-  if(isError) return <Fallback message={"there was an error fetching your data"}/>
+  if(isError) return <Fallback queryString={queryString} message={"there was an error fetching your data"}/>
 
 return (
   <>
-  {data.Response === "False" && <Fallback message={data.Error}/>}
+  {data.Response === "False" && <Fallback queryString={queryString} message={data.Error}/>}
   {data.Response === "True" && 
   <div className="grid grid-cols-5">
     {data.Search.map(movie => <MovieCard key={movie.imdbID} movie={movie}/>)}

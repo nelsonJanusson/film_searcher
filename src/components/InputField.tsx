@@ -7,7 +7,6 @@ export default function InputField({setQueryString}:{setQueryString: React.Dispa
     const {
         register,
         handleSubmit,
-        formState: { errors },
       } = useForm<Inputs>()
       
     const onSubmit: SubmitHandler<Inputs> = (data) => setQueryString(data.queryString)
