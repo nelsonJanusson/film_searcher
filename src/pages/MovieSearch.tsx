@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function MovieSearch() {
 
-  const [queryString,setQueryString] = useState<string>("movies"); 
+  const [queryString,setQueryString] = useState<string>("movie"); 
 
   return (
     <>  
