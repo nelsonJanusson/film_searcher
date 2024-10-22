@@ -16,7 +16,7 @@ export default function MovieList({
   const{data, isLoading, isError} = useGetMovies(queryString, page); 
 
   if(isLoading) return <LoadingState/> 
-  if(isError) return <Fallback queryString={queryString} message={"oops"}/>
+  if(isError) return <Fallback queryString={queryString} message={"unkown server error"}/>
   if(data.Response === "False") return <Fallback queryString={queryString} message={data.Error}/>
 
   return (
