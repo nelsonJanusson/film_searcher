@@ -1,3 +1,5 @@
+# Description
+Small typescript project that i made as part of a job application proscess
 # Prerequisites
 
 - An installation of Node.js version 18.16.1 or higher (earlier versions might work but have not been tested).
